@@ -1,0 +1,16 @@
+html {
+    font-size: 81.25%;
+}
+
+body {
+    font-size: 1.3rem;
+    letter-spacing: 0.02rem;
+}
+
+/*BORDER BOX RESET*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}

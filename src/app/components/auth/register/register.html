@@ -1,0 +1,115 @@
+<section class="register-component" ng-cloak>
+    <h1>Registrarse</h1>
+    <form
+        name="registerForm"
+        layout="column"
+        class="md-whiteframe-2dp"
+        novalidate
+        ng-submit="$ctrl.createUser($event);">
+        <md-input-container>
+            <label>Usuario</label>
+            <input ng-model="$ctrl.user.username">
+        </md-input-container>
+
+        <div layout="row" layout-align="space-between">
+            <md-input-container flex>
+                <label>Nombre</label>
+                <input ng-model="$ctrl.user.name">
+            </md-input-container>
+
+            <md-input-container flex>
+                <label>Apellido</label>
+                <input ng-model="$ctrl.user.lastname">
+            </md-input-container>
+        </div>
+
+        <md-input-container>
+            <label>Dirección</label>
+            <input ng-model="$ctrl.user.address">
+        </md-input-container>
+
+        <md-input-container>
+            <label>Teléfono</label>
+            <input ng-model="$ctrl.user.phone">
+        </md-input-container>
+
+        <md-input-container>
+            <label>Pais</label>
+            <md-select ng-model="$ctrl.user.country">
+                <md-option ng-repeat="country in $ctrl.countries" value="{{country.id}}">
+                    {{country.name}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+
+        <md-input-container>
+            <label>Provincia</label>
+            <md-select ng-model="$ctrl.user.state">
+                <md-option ng-repeat="state in $ctrl.states" value="{{state.id}}">
+                    {{state.name}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+
+        <md-input-container>
+            <label>Ciudad</label>
+            <input ng-model="$ctrl.user.city">
+        </md-input-container>
+
+        <md-input-container>
+            <label>Contraseña</label>
+            <input ng-model="$ctrl.user.password">
+        </md-input-container>
+
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="$ctrl.user.email">
+        </md-input-container>
+
+        <p ng-if="$ctrl.error">{{ $ctrl.error }}</p>
+
+        <md-button type="submit" ng-disabled="registerForm.$invalid" class="md-raised md-primary">Registrarse</md-button>
+    </form>
+
+    <p>Ya tenes una cuenta? <a href="" ui-sref="auth.login">Ingresar</a></p>
+
+</section>
+
+
+<!--
+<form name="authForm" novalidate ng-submit="$ctrl.submitForm();">
+  <label>
+    <input
+      type="email"
+      name="email"
+      required="required"
+      placeholder="Enter your email"
+      ng-model="$ctrl.user.email">
+  </label>
+  <label>
+    <input
+      type="password"
+      name="password"
+      required="required"
+      placeholder="Enter your password"
+      ng-model="$ctrl.user.password">
+  </label>
+  <div class="auth-button">
+    <button type="submit" ng-disabled="authForm.$invalid">
+      {{ $ctrl.button }}
+    </button>
+  </div>
+  <div ng-if="$ctrl.message">
+    {{ $ctrl.message }}
+  </div>
+</form>
+-->
+
+
+
+<!--
+user="$ctrl.user"
+message="{{ $ctrl.error }}"
+button="Create user"
+on-submit="$ctrl.createUser($event);">
+-->

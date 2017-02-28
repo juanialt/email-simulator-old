@@ -1,5 +1,8 @@
 import angular from 'angular';
+import { auth } from './auth/auth.module';
 
-export const ComponentsModule = angular
-    .module('app.components', [])
+export const components = angular
+    .module('components', [
+        auth
+    ])
     .name;

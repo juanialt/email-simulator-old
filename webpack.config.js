@@ -7,10 +7,10 @@ const APP_TITLE = 'umail';
 
 module.exports = {
     devtool: 'inline-source-map',
-    entry: ['babel-polyfill', APP_DIR + '/app/app.module.js'],
+    entry: ['babel-polyfill', APP_DIR + '/app/root.module.js'],
     output: {
         path: BUILD_DIR,
-        filename: 'app.js'
+        filename: 'root.js'
     },
     module: {
         loaders: [{
@@ -21,8 +21,8 @@ module.exports = {
         }, {
             test : /\.js?/,
             exclude: /(node_modules|bower_components)/,
-            include : APP_DIR,
             loader : 'babel-loader',
+            include : APP_DIR,
             query: {
                 retainLines: true
             }

@@ -1,6 +1,5 @@
 html {
     font-size: 81.25%;
-    background: red;
 }
 
 body {
@@ -10,8 +9,8 @@ body {
 
 /*BORDER BOX RESET*/
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }

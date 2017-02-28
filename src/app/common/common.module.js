@@ -1,5 +1,26 @@
 import angular from 'angular';
+import { app } from './app.module';
 
-export const CommonModule = angular
-    .module('app.common', [])
+export const common = angular
+    .module('common', [
+        app
+    ])
     .name;
+
+
+    // 
+    // import loader from 'angular-loading-bar';
+    // import { app } from './app.module';
+    //
+    // export const common = angular
+    //   .module('common', [
+    //     loader,
+    //     app,
+    //   ])
+    //   .run(($transitions, cfpLoadingBar) => {
+    //     'ngInject';
+    //
+    //     $transitions.onStart({}, cfpLoadingBar.start);
+    //     $transitions.onSuccess({}, cfpLoadingBar.complete);
+    //   })
+    //   .name;

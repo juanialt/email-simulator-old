@@ -1,0 +1,25 @@
+<section class="login-component" ng-cloak>
+    <h1>Ingresar</h1>
+    <form
+        name="loginForm"
+        layout="column"
+        class="md-whiteframe-2dp"
+        novalidate
+        ng-submit="$ctrl.loginUser($event);">
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="$ctrl.user.email">
+        </md-input-container>
+
+        <md-input-container>
+            <label>Contraseña</label>
+            <input type="password" ng-model="$ctrl.user.password">
+        </md-input-container>
+
+        <p ng-if="$ctrl.error">{{ $ctrl.error }}</p>
+
+        <md-button type="submit" ng-disabled="loginForm.$invalid" class="md-raised md-primary">Ingresar</md-button>
+    </form>
+
+    <p>No tenes una cuenta? <a href="" ui-sref="auth.register">Registrarse</a></p>
+</section>

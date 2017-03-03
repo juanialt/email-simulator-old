@@ -6,16 +6,26 @@ export class AuthService {
 
         this.auth = $firebaseAuth(firebase.auth());
         this.authData = null;
+        this.userData = null;
+
         this.onSignIn = (user) => {
             this.authData = user;
             return this.auth.$requireSignIn();
         };
+
         this.storeAuthData = (data) => {
             this.authData = data;
             return this.authData;
         };
+
         this.clearAuthData = () => {
             this.authData = null;
+        };
+
+        this.storeUserData = (data) => {
+            console.log('storing data');
+            this.userData = data;
+            return this.userData;
         };
     }
 
@@ -29,6 +39,21 @@ export class AuthService {
         return this.auth
         .$createUserWithEmailAndPassword(user.email, user.password)
         .then(this.storeAuthData);
+    }
+
+    // Create a user with all the extra data referencing the authorized one
+    registerUser(user) {
+        return firebase.database().ref('users/' + this.authData.uid).set({
+            username: user.username,
+            name: user.name,
+            lastname: user.lastname,
+            address: user.address,
+            phone: user.phone,
+            country: user.country,
+            state: user.state,
+            city: user.city,
+            email: user.email
+        }).then(() => this.storeUserData(user));
     }
 
     logout() {

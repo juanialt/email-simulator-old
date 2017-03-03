@@ -11,7 +11,7 @@ export const registerComponent = {
             this.authService = AuthService;
             this.$state = $state;
         }
-        
+
         $onInit() {
             this.error = null;
             this.countries = [{
@@ -50,6 +50,10 @@ export const registerComponent = {
             return this.authService
             .register(this.user)
             .then(() => {
+
+                this.authService.registerUser(this.user);
+
+
                 this.$state.go('app');
             }, reason => {
                 this.error = reason.message;

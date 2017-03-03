@@ -10,6 +10,7 @@ export const appComponent = {
             this.$state = $state;
             this.user = AuthService.getUser();
         }
+        
         logout() {
             return this.authService
             .logout()

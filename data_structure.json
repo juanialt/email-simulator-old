@@ -1,0 +1,94 @@
+{
+    "email-simulator": {
+        "users": {
+            "1": {
+                "username": "speters",
+                "name": "steven",
+                "lastname": "peters",
+                "address": "72 anderson park",
+                "phone": "1-(339)987-9467",
+                "email": "speters@gmail.com",
+                "city": "1",
+                "province": "1",
+                "country": "1",
+
+                "labels": {
+                    "1": "friends",
+                    "2": "shopping"
+                }
+            },
+            "2": {
+                "username": "jtaylor",
+                "name": "judy",
+                "lastname": "taylor",
+                "address": "390 hanover crossing",
+                "phone": "33-(225)194-3738",
+                "email": "jtaylor@gmail.com",
+                "city": "1",
+                "province": "1",
+                "country": "1",
+
+                "labels": {}
+            },
+            "3": {
+                "username": "lallen",
+                "name": "linda",
+                "lastname": "allen",
+                "address": "95 boyd plaza",
+                "phone": "353-(494)811-0550",
+                "email": "lallen@gmail.com",
+                "city": "1",
+                "province": "1",
+                "country": "1",
+
+                "labels": {
+                    "1": {
+                        "name": "family",
+                        "description": ""
+                    },
+                    "2": {
+                        "name": "work",
+                        "description": ""
+                    }
+                }
+            },
+        },
+        "messages": {
+            "1": {
+                "sender": "1",
+                "subject": "first one!",
+                "message": "<p>Hi,</p><p>this is my first message!!</p>",
+                "date": 983275235320,
+                "attachments": {
+                    "1": "https://firebasestorage.googleapis.com/v0/b/filetest-d7b65.appspot.com/o/attachment_picture_1.jpeg?alt=media&token=f1ac5a50-200e-4c82-a753-caece7c98a53",
+                    "2": "https://firebasestorage.googleapis.com/v0/b/filetest-d7b65.appspot.com/o/attachment_picture_2.jpg?alt=media&token=6b8a8c8a-273b-43e7-99f6-c6da9ebe2856",
+                    "3": "https://firebasestorage.googleapis.com/v0/b/filetest-d7b65.appspot.com/o/attachment_file.zip?alt=media&token=f25d1600-e9fd-45bd-b9ab-819943a90403"
+                },
+                "recipients": {
+                    "2": "jtaylor",
+                    "3": "lallen"
+                },
+                "labels": {
+                    "1": "friends"
+                }
+            }
+        },
+        "cities": {
+            "1": {
+                "name": "mar del plata",
+                "province": "1"
+            }
+        },
+        "provinces": {
+            "1": {
+                "name": "buenos aires",
+                "country": "1"
+            }
+        },
+        "countries": {
+            "1": {
+                "name": "argentina"
+            }
+        }
+    }
+}

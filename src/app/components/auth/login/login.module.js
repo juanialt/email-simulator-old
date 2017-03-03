@@ -1,6 +1,8 @@
 import uiRouter from 'angular-ui-router';
 import { loginComponent } from './login.component';
 
+import './login.scss';
+
 export const login = angular
     .module('components.auth.login', [
         uiRouter,

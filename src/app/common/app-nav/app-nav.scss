@@ -1,0 +1,22 @@
+@import '../../styles/colorscheme';
+
+.nav-component {
+    background: $blue-500;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 2rem;
+    height: 3rem;
+    position: relative;
+    z-index: 1;
+
+    .logout-btn {
+        display: flex;
+        align-items: center;
+        border-left: 1px solid white;
+        padding-left: 1rem;
+        margin-left: 1rem;
+        cursor: pointer;
+    }
+}

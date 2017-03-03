@@ -1,3 +1,20 @@
-.app {
-  margin-left: 250px;
+.app-component {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .app-component-wrapper {
+        display: flex;
+        flex: 1;
+    }
+
+    .app-component-content {
+        overflow: auto;
+        flex: 1;
+    }
 }

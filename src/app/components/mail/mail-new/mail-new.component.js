@@ -3,30 +3,27 @@ import templateUrl from './mail-new.html';
 export const mailNewComponent = {
     template: templateUrl,
     controller: class MailNewComponent {
-        constructor(MailService, $state) {
+        constructor(AuthService, MailService, $state) {
             'ngInject';
 
             this.mailService = MailService;
             this.$state = $state;
+            this.user = AuthService.getUser();
+            this.user.uid = AuthService.getAuthUser().uid;
         }
         $onInit() {
             this.mail = {
-                name: '',
-                email: '',
-                job: '',
-                location: '',
-                social: {
-                    facebook: '',
-                    github: '',
-                    twitter: '',
-                    linkedin: '',
-                },
-                tag: 'none',
+                sender: this.user,
+                subject: '',
+                recipients: '',
+                message: '',
+                date: null
             };
         }
-        createNewMail(event) {
+        createNewMail() {
+            this.mail.date = new Date().getTime();
             return this.mailService
-            .createNewMail(event.mail)
+            .createNewMail(this.mail)
             .then((mail) => {
                 this.$state.go('mail', {
                     id: mail.key,

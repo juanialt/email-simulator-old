@@ -61,10 +61,6 @@ export class AuthService {
             .ref('users/' + userId)
             .once('value')
             .then((snapshot) => this.storeUserData(snapshot.val()));
-
-        // return firebase.database().ref('users/' + userId).once('value').then((function(snapshot)) {
-        //     this.userData = snapshot.val();
-        // });
     }
 
     logout() {

@@ -2,6 +2,24 @@
 
 .mails-component {
 
+    .mails-list {
+        .mail {
+            display: flex;
+
+            .sender {
+                flex: 0 0 15rem;
+            }
+
+            .subject {
+                flex: 1;
+            }
+
+            .date {
+                flex: 0 0 15rem;
+            }
+        }
+    }
+
     .empty {
         display: flex;
         align-items: center;

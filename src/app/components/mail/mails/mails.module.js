@@ -24,14 +24,13 @@ export const mails = angular
                 },
             },
             resolve: {
-                mails(MailService) {
+                mails(MailService, $transition$) {
                     'ngInject';
-
-                    return MailService.getMailsList().$loaded();
+                    const filter = $transition$.params().filter;
+                    return MailService.getMailsList(filter).$loaded();
                 },
                 filter($transition$) {
                     'ngInject';
-
                     return $transition$.params();
                 },
             },

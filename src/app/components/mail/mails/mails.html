@@ -1,14 +1,14 @@
 <div class="mails-component">
-    <ul class="mails-list" ng-if="$ctrl.filteredMails.length">
-        <li ng-repeat="mail in $ctrl.filteredMails">
-            <!-- <contact
-                contact="contact"
-                on-select="$ctrl.goToContact($event);">
-            </contact> -->
-        </li>
-    </ul>
 
-    <div class="empty" ng-if="!$ctrl.filteredMails.length">
+    <div class="mails-list" ng-if="$ctrl.mails.length">
+        <div class="mail" ng-repeat="mail in $ctrl.mails">
+            <span class="sender">{{mail.sender.email}}</span>
+            <span class="subject">{{mail.subject}}</span>
+            <span class="date">{{mail.date}}</span>
+        </div>
+    </div>
+
+    <div class="empty" ng-if="!$ctrl.mails.length">
         <i class="material-icons">mail</i>
         <p>Sin mensajes que mostrar...<p>
     </div>

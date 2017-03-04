@@ -10,32 +10,35 @@ export class MailService {
         this.uid = AuthService.getAuthUser().uid;
 
         this.rootRef = firebase.database().ref();
-
-        console.log('LEER BASE');
-        const dbRef = firebase.database().ref().child('text');
-        dbRef.on('value', snap => console.log(snap.val()));
     }
 
-    // createNewMail(mail) {
-    //     return this.$firebaseArray(this.ref.child(this.uid)).$add(mail);
-    // }
+    createNewMail(mail) {
+        return this.$firebaseArray(this.ref).$add(mail);
+    }
     //
     // getMailById(id) {
     //     return this.$firebaseObject(this.ref.child(this.uid).child(id));
     // }
     //
     getMailsList() {
-        const mails = this.rootRef.child('mails');
-        mails.on('value', snap => console.log(snap.val()));
+        // const mails = this.rootRef.child('mails');
+        // mails.on('value', snap => console.log(snap.val()));
 
-        return this.$firebaseArray(this.ref.child('mails'));
+        return this.$firebaseArray(this.ref);
+        //
+        //
+        // var starCountRef = this.ref.child('mails');
+        // starCountRef.on('value', function(snapshot) {
+        //   updateStarCount(postElement, snapshot.val());
+        // });
+
     }
     //
-    // updateContact(contact) {
-    //     return contact.$save();
+    // updateMail(mail) {
+    //     return mail.$save();
     // }
     //
-    // deleteContact(contact) {
-    //     return contact.$remove();
+    // deleteMail(mail) {
+    //     return mail.$remove();
     // }
 }

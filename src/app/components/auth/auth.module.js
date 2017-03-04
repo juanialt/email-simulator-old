@@ -4,7 +4,6 @@ import uiRouter from 'angular-ui-router';
 import { AuthService } from './auth.service';
 import { login } from './login/login.module';
 import { register } from './register/register.module';
-import { authForm } from './auth-form/auth-form.module';
 
 import './auth.scss';
 
@@ -23,8 +22,7 @@ export const auth = angular
         angularfire,
         uiRouter,
         login,
-        register,
-        //authForm
+        register
     ])
     .config(($firebaseRefProvider) => {
         'ngInject';
@@ -32,7 +30,7 @@ export const auth = angular
         $firebaseRefProvider
         .registerUrl({
             default: firebaseConfig.databaseURL,
-            //contacts: `${firebaseConfig.databaseURL}/contacts`,
+            //mails: `${firebaseConfig.databaseURL}/mails`,
         });
     })
     .run(($transitions, $state, AuthService) => {
@@ -52,34 +50,15 @@ export const auth = angular
             if (AuthService.isAuthenticated()) return $state.target('app');
         });
     })
-
-
     .config(($stateProvider, $urlRouterProvider) => {
         'ngInject';
 
         $stateProvider
         .state('auth', {
             redirectTo: 'auth.login',
-            url: '/auth',
-            //template: '<div class="juani"></div>',
+            url: '/auth'
         });
         $urlRouterProvider.otherwise('/auth/login');
     })
-
-    // .config(($stateProvider, $urlRouterProvider) => {
-    //     'ngInject';
-    //     $stateProvider
-    //     .state('todos', {
-    //         url: '/auth/register',
-    //         component: 'register',
-    //         resolve: {
-    //             //todoData: TodoService => TodoService.getTodos()
-    //         }
-    //     });
-    //     $urlRouterProvider.otherwise('/');
-    // })
-
-
-
     .service('AuthService', AuthService)
     .name;

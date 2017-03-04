@@ -1,19 +1,11 @@
-<!-- <contact-detail
-    contact="$ctrl.contact"
-    on-save="$ctrl.createNewContact($event);">
-</contact-detail> -->
-
 <section class="mail-new-component">
     <header>
         Nuevo Mensaje
     </header>
-    <section class="container">
+    <form class="container" novalidate ng-submit="$ctrl.createNewMail($event);">
         <section class="mail-data">
             <md-input-container md-no-float>
-                <input ng-model="$ctrl.mail.recipient" placeholder="Para">
-            </md-input-container>
-            <md-input-container md-no-float>
-                <input ng-model="$ctrl.user.email" placeholder="De">
+                <input ng-model="$ctrl.mail.recipients" placeholder="Destinatarios">
             </md-input-container>
             <md-input-container md-no-float>
                 <input ng-model="$ctrl.mail.subject" placeholder="Asunto">
@@ -21,12 +13,12 @@
         </section>
 
         <section class="mail-content">
-            <textarea class="mail-editor"></textarea>
+            <textarea class="mail-editor" ng-model="$ctrl.mail.message"></textarea>
         </section>
 
         <section class="mail-actions">
             <md-button class="md-raised md-primary">Descartar</md-button>
-            <md-button class="md-raised md-primary">Enviar</md-button>
+            <md-button type="submit" class="md-raised md-primary">Enviar</md-button>
         </section>
-    </section>
+    </form>
 </section>

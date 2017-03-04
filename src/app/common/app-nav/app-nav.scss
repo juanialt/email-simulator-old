@@ -11,6 +11,10 @@
     position: relative;
     z-index: 1;
 
+    .name {
+        text-transform: capitalize;
+    }
+
     .logout-btn {
         display: flex;
         align-items: center;

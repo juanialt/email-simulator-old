@@ -1,5 +1,12 @@
 <aside class="sidebar-component">
     <ul>
+        <li ui-sref="new" ui-sref-active-eq="active">
+            <i class="material-icons">add_circle_outline</i>
+            <span>Redactar</span>
+        </li>
+    </ul>
+
+    <ul>
         <li ng-repeat="item in ::$ctrl.defaultLabels" ui-sref="mails({ filter: item.state })" ui-sref-active-eq="active">
             <i class="material-icons">{{ ::item.icon }}</i>
             <span>{{ ::item.label }}</span>

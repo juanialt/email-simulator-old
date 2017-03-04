@@ -35,7 +35,7 @@ module.exports = {
                 'style',
                 'css?importLoaders=1'
             ]
-        },]
+        }]
     },
     plugins: [
         new HtmlWebpackPlugin({

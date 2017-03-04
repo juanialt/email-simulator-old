@@ -1,0 +1,50 @@
+@import '../../../styles/colorscheme';
+
+.mail-new-component {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 0 1rem;
+    }
+
+    md-input-container {
+        margin: 0;
+    }
+
+    header {
+        flex: 0 0 3rem;
+        display: flex;
+        align-items: center;
+        background: $blue-700;
+        border-bottom: 1px solid $grey-300;
+        color: white;
+        padding: 0 1rem;
+    }
+
+    .mail-data {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mail-content {
+        display: flex;
+        flex: 1;
+
+        .mail-editor {
+            width: 100%;
+            resize: none;
+        }
+    }
+
+    .mail-actions {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+}

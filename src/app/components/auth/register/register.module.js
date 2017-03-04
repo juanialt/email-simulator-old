@@ -18,5 +18,3 @@ export const register = angular
         });
     })
     .name;
-
-console.log('REGISTER MODULE');

@@ -83,5 +83,3 @@ export const auth = angular
 
     .service('AuthService', AuthService)
     .name;
-
-console.log('AUTH MODULE');

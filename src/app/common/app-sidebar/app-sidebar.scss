@@ -7,20 +7,22 @@
 
     ul {
         list-style: none;
+        border-bottom: 1px solid $grey-300;
         margin: 0;
         padding: 0;
 
-        &:first-of-type {
-            margin-bottom: 1rem;
+        &:last-of-type {
+            border-bottom: none;
         }
 
         li {
             display: flex;
             align-items: center;
-            padding: .5rem 1rem;
+            padding-left: 1rem;
             padding-right: 2rem;
             cursor: pointer;
             user-select: none;
+            height: 3rem;
 
             &.active {
                 background: $grey-200;

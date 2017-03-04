@@ -10,6 +10,7 @@ export class AuthService {
 
         this.onSignIn = (user) => {
             this.authData = user;
+            this.fetchUser(user.uid);
             return this.auth.$requireSignIn();
         };
 
@@ -23,7 +24,6 @@ export class AuthService {
         };
 
         this.storeUserData = (data) => {
-            console.log('storing data');
             this.userData = data;
             return this.userData;
         };
@@ -56,6 +56,17 @@ export class AuthService {
         }).then(() => this.storeUserData(user));
     }
 
+    fetchUser(userId) {
+        return firebase.database()
+            .ref('users/' + userId)
+            .once('value')
+            .then((snapshot) => this.storeUserData(snapshot.val()));
+
+        // return firebase.database().ref('users/' + userId).once('value').then((function(snapshot)) {
+        //     this.userData = snapshot.val();
+        // });
+    }
+
     logout() {
         return this.auth
         .$signOut()
@@ -73,6 +84,10 @@ export class AuthService {
     }
 
     getUser() {
+        if (this.userData) return this.userData;
+    }
+
+    getAuthUser() {
         if (this.authData) return this.authData;
     }
 }

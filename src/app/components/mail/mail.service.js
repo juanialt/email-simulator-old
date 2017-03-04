@@ -7,7 +7,7 @@ export class MailService {
         this.$firebaseArray = $firebaseArray;
         this.$firebaseObject = $firebaseObject;
         this.ref = firebase.database().ref('mails');
-        this.uid = AuthService.getUser().uid;
+        this.uid = AuthService.getAuthUser().uid;
 
         this.rootRef = firebase.database().ref();
 

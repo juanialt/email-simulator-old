@@ -1,6 +1,5 @@
 import uiRouter from 'angular-ui-router';
 import { mailsComponent } from './mails.component';
-import { mailsFilter } from './mails.filter';
 
 import './mails.scss';
 
@@ -9,7 +8,6 @@ export const mails = angular
         uiRouter,
     ])
     .component('mails', mailsComponent)
-    .filter('mailsFilter', mailsFilter)
     .config(($stateProvider) => {
         'ngInject';
 
@@ -27,12 +25,14 @@ export const mails = angular
                 mails(MailService, $transition$) {
                     'ngInject';
                     const filter = $transition$.params().filter;
-                    return MailService.getMailsList(filter).$loaded();
-                },
-                filter($transition$) {
-                    'ngInject';
-                    return $transition$.params();
-                },
+                    //
+                    if(filter === 'sent') {
+                        return MailService.getSentMails().$loaded();
+                    } else {
+                        //return MailService.getMailsList(filter).$loaded();
+                    }
+
+                }
             },
         });
     })

@@ -20,17 +20,19 @@ export class MailService {
     //     return this.$firebaseObject(this.ref.child(this.uid).child(id));
     // }
     //
-    getMailsList() {
+    getMailsList(filter) {
         // const mails = this.rootRef.child('mails');
         // mails.on('value', snap => console.log(snap.val()));
 
         return this.$firebaseArray(this.ref);
-        //
-        //
-        // var starCountRef = this.ref.child('mails');
-        // starCountRef.on('value', function(snapshot) {
-        //   updateStarCount(postElement, snapshot.val());
-        // });
+    }
+
+    getSentMails() {
+        const mails = this.rootRef.child('mails').orderByChild('sid').equalTo(this.uid);
+        mails.on('value', snap => console.log(snap.val()));
+
+        //return this.$firebaseArray(this.ref.child('sender'));
+        return this.$firebaseArray(this.rootRef.child('mails').orderByChild('sid').equalTo(this.uid));
 
     }
     //

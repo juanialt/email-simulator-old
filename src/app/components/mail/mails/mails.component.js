@@ -12,7 +12,6 @@ export const mailsComponent = {
 
             this.$state = $state;
             this.mailService = MailService;
-            this.filteredMails = $filter('mailsFilter')(this.mails, this.filter);
 
 
             // var obj = $firebaseObject(ref);
@@ -24,13 +23,7 @@ export const mailsComponent = {
             //     console.error("Error:", error);
             //   });
 
-            // this.mails
-            // .then((mail) => {
-            //     console.log('adentro');
-            //     console.log(mail);
-            // });
-
-            console.log(this.filteredMails);
+            console.log(this.mails);
         }
 
         goToMail(event) {
